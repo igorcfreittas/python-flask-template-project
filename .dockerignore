@@ -1,0 +1,64 @@
+# Exclude Python cache files and directories
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude environment variables and configuration files
+.env
+.env.*
+
+# Exclude local development environments
+venv/
+env/
+.venv/
+ENV/
+.ENV/
+
+# Exclude Flask instance folder and SQLite database files
+instance/
+*.db
+*.sqlite3
+
+# Exclude logs
+*.log
+*.log.*
+
+# Exclude distribution / packaging files
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+*.egg
+*.manifest
+*.spec
+
+# Exclude unit test / coverage reports
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+htmlcov/
+
+# Exclude IDE/editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Exclude OS generated files
+.DS_Store
+*.swp
+*.swo
+Thumbs.db
+
+# Exclude Git files and directories
+.git
+.gitignore
+
+# Exclude Docker-specific files
+Dockerfile
+.dockerignore

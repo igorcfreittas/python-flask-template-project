@@ -1,0 +1,41 @@
+name: api
+
+services:
+  api:
+    container_name: api
+    build: .
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    volumes:
+      - .:/usr/src/api
+    environment:
+      - FLASK_ENV=development
+      - MONGO_URL=mongodb://root:root@mongodb:27017
+      - APP_PORT=5000
+      - APP_HOST=0.0.0.0
+      - DB_NAME=dev_test
+    depends_on:
+      - mongodb
+    links:
+      - mongodb
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:7.0.14
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express:latest
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      ME_CONFIG_MONGODB_URL: mongodb://root:root@mongodb:27017
+      ME_CONFIG_BASICAUTH: falsedocke
