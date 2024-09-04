@@ -27,7 +27,6 @@ class UserResource(Resource):
         response = self.user.find_by_id(_id)
         return response
 
-    @auth
     def post(self):
         req = RequestParser.get(request.get_json(), self.fields)
         if 'errors' in req:
