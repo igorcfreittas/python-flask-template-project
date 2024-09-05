@@ -24,6 +24,7 @@ class UserResource(Resource):
 
     @auth
     def get(self, _id: str):
+        print(_id)
         response = self.user.find_by_id(_id)
         return response
 

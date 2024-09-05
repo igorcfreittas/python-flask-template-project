@@ -38,4 +38,4 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: root
       ME_CONFIG_MONGODB_URL: mongodb://root:root@mongodb:27017
-      ME_CONFIG_BASICAUTH: falsedocke
+      ME_CONFIG_BASICAUTH: false
